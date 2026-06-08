@@ -1,6 +1,30 @@
-x=7
-a="atharva"
-print(x)
-print(a)
-b=input("give your name now !")
-print("\n bye" , b)
+from tkinter import *
+root = Tk()
+root.title('login app')
+root.geometry('400x400')
+frame = Frame(master=root, height=400, width=400,bg='white')
+lbl = Label(master=frame, text='full name', bg='white', fg='black')
+lbl1 = Label(master=frame, text='email', bg='white', fg='black')
+lbl2 = Label(master=frame, text='password', bg='white', fg='black')
+name_entry = Entry(master=frame, width=20)
+email_entry = Entry(master=frame, width=20)
+password_entry = Entry(master=frame, width=20)
+def display():
+    name = name_entry.get()
+    greet = 'welcome ' + name
+    congrats = 'congratulations for your new account'
+    textbox.insert(END, greet)
+    textbox.insert(END, '\n')
+    textbox.insert(END, congrats)
+textbox = Text(bg='white', fg='black')
+btn = Button(text='create account', command=display)
+frame.place(x=20, y=0)
+lbl.place(x=20, y=20)
+name_entry.place(x=180, y=20)
+lbl1.place(x=20, y=50)
+email_entry.place(x=180, y=50)
+lbl2.place(x=20, y=80)
+password_entry.place(x=180, y=80)
+btn.place(x=180, y=110)
+textbox.place(x=20, y=150)
+root.mainloop()
