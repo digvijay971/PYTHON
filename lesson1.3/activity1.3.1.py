@@ -1,8 +1,13 @@
-a = 5
-print("type of a: ", type(a))
-b = 2.5
-print("type of b: ", type(b))
-c= "coding"
-print("type of c: ", type(c))
-d= True
-print("type of d: ", type(d))
+from tkinter import *
+window = Tk()
+window.title("lol a simple button")
+window.geometry("100x100")
+def handle_keypress(event):
+    print(event.char)
+window.bind("<Key>" , handle_keypress)
+def handle_click():
+    print("clicked")
+button = Button(text="muahahaha")
+button.pack()
+button.bind("<Button-1>",handle_click)
+window.mainloop()
